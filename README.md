@@ -6,10 +6,6 @@
 
 **TianChen Stack** is an LLM inference software stack for **RISC-V and extensible hardware extensions**. The current focus is on RISC-V / RVV / custom extensions and open heterogeneous backends. Future versions will gradually expand toward GPUs, TPUs, NPUs, and other AI accelerators.
 
-<p align="center">
-  <img src="assets/images/Tianchen.png" alt="TianChen Stack overview" width="420">
-</p>
-
 This repository is the entry point for the TianChen Stack and organizes three related projects:
 
 | Layer | Project | Status | Repository | Description |
@@ -38,6 +34,16 @@ The main challenges are:
 - Even when kernels and compilers are available, the resulting backend still needs to be integrated into real LLM serving systems.
 
 TianChen Stack aims to make this hidden knowledge explicit, creating an extensible path from operators to compilers to LLM serving.
+
+---
+
+## Overall Architecture
+
+TianChen Stack is organized as an operator-to-serving pipeline: IntentIR recovers portable operator intent, TianChen Forge turns intent and OptGuide assets into backend implementations, and TianChen Serve connects those implementations to real LLM inference services.
+
+<p align="center">
+  <img src="assets/images/Tianchen.png" alt="TianChen Stack architecture" width="560">
+</p>
 
 ---
 
@@ -167,7 +173,7 @@ TianChen Stack
 
 ## License
 
-TBD
+This project is licensed under the [MIT License](LICENSE).
 
 ---
 
